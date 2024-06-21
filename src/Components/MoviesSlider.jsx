@@ -1,5 +1,5 @@
 import { base_url_for_getting_image } from '../APIs/getTop100Movies'
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { useQuery } from '@tanstack/react-query';
 import { getTop100Movies } from '../APIs/getTop100Movies.js';
 import { FaChevronLeft } from "react-icons/fa";
@@ -12,19 +12,19 @@ const MoviesSlider = () => {
     queryFn: () => getTop100Movies("batman")
   });
 
-  const [showLeftSlider, setShowLeftSlider] = useState(false)
-  const [showRightSlider, setShowRightSlider] = useState(true)
+  // const [showLeftSlider, setShowLeftSlider] = useState(false)
+  // const [showRightSlider, setShowRightSlider] = useState(true)
   const sliderRef = useRef();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowLeftSlider(sliderRef.current?.scrollLeft > 0);
-      // setShowRightSlider(sliderRef.current?.scrollWidth && sliderRef.current?.scrollLeft < sliderRef.current?.scrollWidth - sliderRef.current?.clientWidth - (160 - 32));
-      console.log("scorrolable width :" + sliderRef.current?.scrollWidth, "scrollleft :" + sliderRef.current?.scrollLeft, "scroll width: " + sliderRef.current?.scrollWidth, "client width: " + sliderRef.current?.clientWidth + "padding and gap : (160 - 32)");
-    }
-    sliderRef.current?.addEventListener('scroll', handleScroll)
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setShowLeftSlider(sliderRef.current?.scrollLeft > 0);
+  //     // setShowRightSlider(sliderRef.current?.scrollWidth && sliderRef.current?.scrollLeft < sliderRef.current?.scrollWidth - sliderRef.current?.clientWidth - (160 - 32));
+  //     console.log("scorrolable width :" + sliderRef.current?.scrollWidth, "scrollleft :" + sliderRef.current?.scrollLeft, "scroll width: " + sliderRef.current?.scrollWidth, "client width: " + sliderRef.current?.clientWidth + "padding and gap : (160 - 32)");
+  //   }
+  //   sliderRef.current?.addEventListener('scroll', handleScroll)
 
-  }, [sliderRef])
+  // }, [sliderRef])
 
 
   function handleLeftSlider(sliderElement) {
