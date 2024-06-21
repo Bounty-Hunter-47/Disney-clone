@@ -1,6 +1,6 @@
 {
   "homepage": "https://Bounty-Hunter-47.github.io/Disney-clone",
-  "name": "disney-clone",
+  "name": "disney-clone", 
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.45.1",
