@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import logo from "./../Assets/Images/logo.png"
-import profile from "./../Assets/Images/profile.png"
+import logo from "./../../public/Assets/Images/logo.png"
+import profile from "./../../public/Assets/Images/profile.png"
 import Menu from './Menu';
 import { BsThreeDotsVertical } from "react-icons/bs";
 import menuDetails from '../Static Data/menuData.js';
