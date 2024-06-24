@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import MoviesByCategory from './MoviesByCategory.jsx';
 import MoviesSlider from './MoviesSlider.jsx';
 import Navigation from './Navigation.jsx';
@@ -20,11 +21,13 @@ const Disney = () => {
     }
   ]
 
+  const [searchTerm, setSearchTerm] = useState();
+
   return (
     <>
-      <Navigation />
+      <Navigation setSearchTerm={setSearchTerm} />
       <main>
-        <MoviesSlider />
+        <MoviesSlider searchTerm={searchTerm} />
         <ProductionHose />
         {
           MoviesByCategoryFeed.map((moviesByCategory, index) => {

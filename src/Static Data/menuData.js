@@ -1,5 +1,4 @@
 import { HiHome } from "react-icons/hi2";
-import { IoIosSearch } from "react-icons/io";
 import { FaPlus, FaStar } from "react-icons/fa6";
 import { MdOutlinePlayCircleFilled, MdOutlineMonitor } from "react-icons/md";
 
@@ -7,10 +6,6 @@ const menuDetails = [
   {
     name: 'home',
     Icon: HiHome
-  },
-  {
-    name: 'search',
-    Icon: IoIosSearch
   },
   {
     name: 'watchlist',

@@ -1,13 +1,17 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import logo from "./../../public/Assets/Images/logo.png"
 import profile from "./../../public/Assets/Images/profile.png"
 import Menu from './Menu';
 import { BsThreeDotsVertical } from "react-icons/bs";
 import menuDetails from '../Static Data/menuData.js';
+import { IoIosSearch } from "react-icons/io";
 
-const Navigation = () => {
+const Navigation = ({ setSearchTerm }) => {
 
   const [showExtraMenu, setShowExtraMenu] = useState(false);
+
+  const [searchInput, setSearchInput] = useState("");
+  const searchInputRef = useRef();
 
   return (
     <>
@@ -57,7 +61,27 @@ const Navigation = () => {
           </div>
 
         </div>
-        <img src={profile} alt="profile" className='w-[40px] cursor-pointer' />
+        <div className='flex items-center gap-x-5'>
+          <div className='hidden md:flex items-center h-[30px] gap-x-2'>
+            <input ref={searchInputRef}
+              className='h-full text-white pl-4 outline-none text-sm rounded-md bg-primary border-[1px] py-4 border-gray-400  placeholder-gray'
+              type="text"
+              value={searchInput}
+              onChange={(e) => { setSearchInput(e.currentTarget.value) }}
+              placeholder='Enter movie here...'
+            />
+            <button
+              className='flex h-full group focus-within:text-white  bg-primary outline-none aspect-square items-center justify-center border-white rounded-full'
+              onClick={() => {
+                if (searchInput) {
+                  setSearchTerm(searchInput)
+                  setSearchInput("");
+                };
+              }}
+            ><IoIosSearch size={25} className='text-gray-400 group-hover:text-white group-focus:text-white outline-none' /></button>
+          </div>
+          <img src={profile} alt="profile" className='w-[40px]  cursor-pointer' />
+        </div>
       </nav >
     </>
   )
